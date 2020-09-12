@@ -1,3 +1,5 @@
+package basics;
+
 public class HelloWorld {
     // age is a number
     // name is a string

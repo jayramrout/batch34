@@ -1,3 +1,6 @@
+// this is just a comment
+package datatypes.integerdt; // this should be the first statment
+
 import javax.swing.text.StyledEditorKit;
 
 public class IntegersExample {
@@ -7,6 +10,7 @@ public class IntegersExample {
         // a b  c d e f ....z : characters
         // ab : String .. b'z its a combination of chars...
         byte yourAge = 20; // yourAge is a variable and int is a datatype..
+
         byte yourFriendsAge = 21;
         System.out.println(yourAge + yourFriendsAge);
 
@@ -25,5 +29,6 @@ public class IntegersExample {
         String name = "Peter"; // combination of characters are known as Strings
 
         System.out.println("Your age is" + 20);
+        System.out.println("hello".toUpperCase());
     }
 }
