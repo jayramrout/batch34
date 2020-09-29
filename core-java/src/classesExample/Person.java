@@ -8,6 +8,9 @@ public class Person {
     private String name; // variable // instance variables // properties
     private int age; // encapsulate
     private String location;
+    private int height;
+
+    private Education education;
 
     // functions .. in this case it getters and setters
     public String getName() {
