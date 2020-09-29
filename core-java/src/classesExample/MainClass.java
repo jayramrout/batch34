@@ -5,7 +5,7 @@ public class MainClass {
         int a = 10;
         String name = "Peter";
 
-        Person peter = new Person();  // Stamp
+        /*Person peter = new Person();  // Stamp
         peter.name = "Peter";
         peter.age = 20;
         peter.location = "Boston";
@@ -15,7 +15,7 @@ public class MainClass {
         sam.age = 22;
         sam.location = "Boston";
 
-        System.out.println(peter.name + " "+ sam.name);
+        System.out.println(peter.name + " "+ sam.name);*/
 
     }
 }
