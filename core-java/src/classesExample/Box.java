@@ -5,6 +5,18 @@ public class Box {
     double height;
     double depth;
 
+    String name;
+    public Box(){}
+
+    public Box(String name){
+        this.name = name;
+        System.out.println("Box "+ name +" Got Created...");
+    }
+
+    protected void finalize() throws Throwable {
+        System.out.println("Box "+ name +" is getting destroyed...");
+    }
+
     // behaviour...
     // setter and getter method...
 

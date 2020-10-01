@@ -8,15 +8,21 @@ public class Laptop {
     private double cost;
     private String color;
     private String processor;
+    public static int count; // this is a class level variable...
+    public int myCount; // instance variable...
 
-    public Laptop(){ } // Default Constructor
+    private Laptop(){
+        count++;
+        myCount++;
+    } // Default Constructor
 
     public Laptop(String name) {
+        this();
         this.name = name;
     }
 
     public Laptop(String name , double cost) {
-        this.name = name;
+        this(name);
         this.cost = cost;
     }
 
