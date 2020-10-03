@@ -1,6 +1,6 @@
 package classesExample;
 
-public class Person {
+class Person {
     /*
         If anything(instance variable/property) is private, it can only be accessed
         inside the class...
@@ -9,8 +9,25 @@ public class Person {
     private int age; // encapsulate
     private String location;
     private int height;
-
     private Education education;
+
+    int getHeight() {
+        return height;
+    }
+    // default
+    void setHeight(int height) {
+        this.height = height;
+    }
+
+    public Education getEducation() {
+        return education;
+    }
+
+    public void setEducation(Education education) {
+        this.education = education;
+    }
+
+
 
     // functions .. in this case it getters and setters
     public String getName() {

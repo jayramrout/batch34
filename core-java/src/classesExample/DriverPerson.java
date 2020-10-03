@@ -6,9 +6,13 @@ public class DriverPerson {
 
         p.setName("Peter");
         p.setAge(-1);
+        p.setHeight(5);
 
         System.out.println(p.getName());
         System.out.println(p.getAge());
+
+//        final String name = "Peter";
+//        name = "Pan";
 
     }
 
