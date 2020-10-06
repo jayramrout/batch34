@@ -1,6 +1,6 @@
 package classesExample;
 
-class Person {
+public class Person {
     /*
         If anything(instance variable/property) is private, it can only be accessed
         inside the class...
