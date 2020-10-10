@@ -28,4 +28,14 @@ public class PhysicsTeacher extends Teacher {
     public void setYearOfIndustrialExperience(int yearOfIndustrialExperience) {
         this.yearOfIndustrialExperience = yearOfIndustrialExperience;
     }
+
+    @Override
+    public String toString() {
+        return "This is a physics teacher with "+ yearsOfLabExperience +" lab years of exp";
+    }
+
+    @Override
+    public void dressing() {
+        System.out.println("Physics teacher should always have a small binacular around their neck..");
+    }
 }

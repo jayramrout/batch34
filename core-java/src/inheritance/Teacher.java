@@ -2,7 +2,7 @@ package inheritance;
 /*
     The behaviour is been derived by the state.
  */
-public class Teacher {
+public abstract class Teacher extends Object {
     private int id;  // state
     private String name;
     private String subject;
@@ -63,9 +63,7 @@ public class Teacher {
         System.out.println("I have to go to school/collage by 8:00 am");
     }
 
-    public void dressing(){
-        System.out.println("I should wear white dress ..");
-    }
+    public abstract void dressing();
 
     public void teachingDuration() {
         if(this.yearsOfExperience >= 20){
@@ -74,4 +72,6 @@ public class Teacher {
             System.out.println("Teaching duration is just 1.5 hr");
         }
     }
+
+    // I want a behaviour which every single teacher should have ..but should be implemented by the subclass itself
 }
