@@ -1,13 +1,17 @@
 package inheritance;
 /*
     The behaviour is been derived by the state.
+    AbsA
+    AbsB
  */
-public abstract class Teacher extends Object {
+public abstract class Teacher {
     private int id;  // state
     private String name;
     private String subject;
     private String collegeName;
     private int yearsOfExperience; // 10 --> 1.5 hr , 20 --> 1 hr
+    protected int myProtection;
+    int callDefault;
 
     public Teacher(int id, String collegeName, String subject, int yearsOfExperience) {
         this.id = id;
@@ -59,7 +63,7 @@ public abstract class Teacher extends Object {
     /**
      * Behaviour
      */
-    public void teacherTiming(){
+    public  void teacherTiming(){
         System.out.println("I have to go to school/collage by 8:00 am");
     }
 

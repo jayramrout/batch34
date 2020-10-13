@@ -1,9 +1,16 @@
-package inheritance;
+package inheritance.sports;
+
+import inheritance.Cooking;
+import inheritance.Swimming;
+import inheritance.Teacher;
+
 /*
     The behaviour is been derived by the state.
  */
-public class SportsTeacher extends Teacher implements Swimming {
+public abstract class SportsTeacher extends Teacher implements Swimming, Cooking {
     private boolean doesTeachYoga;
+
+    // Cooking cooking = new SportsTeacher();
 
     public SportsTeacher(int id, String collegeName, String subject, int yearsOfExperience) {
         super(id, collegeName, subject, yearsOfExperience);
@@ -26,6 +33,13 @@ public class SportsTeacher extends Teacher implements Swimming {
 
     @Override
     public void swim() {
-        System.out.println("Being a sports teacher..i should know how to swim...");
+        System.out.println("Being a inheritance.sports teacher..i should know how to swim...");
     }
+
+    @Override
+    public void cook() {
+        System.out.println("Sports teacher is good at cooking");
+    }
+
+    public abstract void eatingHabits();
 }

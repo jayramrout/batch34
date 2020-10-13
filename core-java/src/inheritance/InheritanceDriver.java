@@ -1,10 +1,14 @@
 package inheritance;
 
+import inheritance.sports.SportsTeacher;
+
 public class InheritanceDriver {
     public static void main(String[] args) {
-        SportsTeacher steacher = new SportsTeacher(104,"MIT","Soccer",23);
-        printTeacherDetails(steacher);
-
+//        Teacher steacher = new SportsTeacher(104,"MIT","Soccer",23);
+//        printTeacherDetails(steacher);
+//        steacher.teacherTiming();
+        // .add(a,b);
+        // .add(a,b,c);
 
 //        Teacher teacher = new Teacher(100, "Burla","Physics", 15);
 //        printTeacherDetails(teacher);
