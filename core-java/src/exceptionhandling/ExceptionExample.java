@@ -1,5 +1,7 @@
 package exceptionhandling;
 
+import exceptionhandling.exception.TooManyItemException;
+
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -22,13 +24,15 @@ public class ExceptionExample {
             finalValue = firstValue/secondValue; // ArithematicException
             points = randomNum[finalValue];
 
+//            int num = Integer.parseInt("aaa");
+
         }catch (ArithmeticException exp){
             exp.printStackTrace();
             finalValue = 6;
             points = 0;
             // exp instanceof Ari // ArrayIOBE
 //            System.exit(0);
-        }catch (ArrayIndexOutOfBoundsException exp){
+        }catch (ArrayIndexOutOfBoundsException | NumberFormatException exp){
             points = 2;
         }catch (Exception exp){
             exp.printStackTrace();
@@ -57,6 +61,8 @@ public class ExceptionExample {
 
         // depending of the final value you would be getting that number of envelops to post..
 
+        gotoUSPS(finalValue); // this is uncaught...
+
         try{
             gotoUSPS(finalValue); // Un-caught exception...
         }catch (Exception exp){
@@ -65,16 +71,23 @@ public class ExceptionExample {
 
         System.out.println("End of the program...");
         try {
-            gotoGrocery(finalValue); // Caught Exception
-        } catch (Exception e) {
+            gotoGrocery(66); // Caught Exception
+        } catch (TooManyItemException e) {
             e.printStackTrace();
         }
+
+
 
     }
 
 
-
-    public static void gotoUSPS(int numberOfEnvelops) {
+    /**
+     * This throws RuntimeException which is UnCaught Exception.
+     * @param numberOfEnvelops
+     * @throws ArithmeticException
+     * @throws ArrayIndexOutOfBoundsException
+     */
+    public static void gotoUSPS(int numberOfEnvelops) throws ArithmeticException , ArrayIndexOutOfBoundsException{
 
         int counterToPost = numberOfEnvelops/2;
 
@@ -85,7 +98,13 @@ public class ExceptionExample {
     }
 
 
-    public static void gotoGrocery(int numberOfEnvelops) throws Exception {
+    public static void gotoGrocery(int noOfItems) throws TooManyItemException {
+
+        if(noOfItems > 50) {
+            throw new TooManyItemException("Your number is too high "+ noOfItems);
+        }
+
+        System.out.println("I am doing my groceries happy...");
 
     }
 }
