@@ -11,6 +11,25 @@ public class Person {
     private int height;
     private Education education;
 
+    public Person(){}
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", location='" + location + '\'' +
+                ", height=" + height +
+                ", education=" + education +
+                '}';
+    }
+
     int getHeight() {
         return height;
     }
