@@ -24,9 +24,9 @@ public class Person {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", location='" + location + '\'' +
-                ", height=" + height +
-                ", education=" + education +
+//                ", location='" + location + '\'' +
+//                ", height=" + height +
+//                ", education=" + education +
                 '}';
     }
 

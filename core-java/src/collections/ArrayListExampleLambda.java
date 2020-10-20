@@ -9,7 +9,10 @@ import java.util.stream.Collectors;
 public class ArrayListExampleLambda {
 
     public static void main(String[] args) {
-        List<String> names = Arrays.asList("Peter", "Pan", "Zoel", "Alpha");
+        List<String> names = Arrays.asList("Peter", "Pan", "Zoel", "Alpha","a","b");
+        List<String> names2 = Arrays.asList("Peter", "Zoel", "Pan", "Alpha");
+
+//        System.out.println(names.containsAll(names2));
 
 //        names.forEach(obj -> System.out.println(obj));
         names.forEach(obj -> ArrayListExampleLambda.printMe(obj));
