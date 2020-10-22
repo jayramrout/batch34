@@ -6,29 +6,29 @@ public class MapExample {
     public static void main(String[] args) {
         // List Set
         List<String> students = Arrays.asList("StudA", "StudB", "StudC", "StudD");
-        List<String> teachers = Arrays.asList("TeaA", "TeaB", "TeaC", "TeaD");
+        List<String> Beanchers = Arrays.asList("BeanA", "BeanB", "BeanC", "BeanD");
         List<List<String>> mappleSchool = new ArrayList<>();
         mappleSchool.add(students);
-        mappleSchool.add(teachers);
+        mappleSchool.add(Beanchers);
         System.out.println(mappleSchool);
 
         List<String> students2 = Arrays.asList("StudAA", "StudBB", "StudCC", "StudDD");
-        List<String> teachers2 = Arrays.asList("TeaAA", "TeaBB", "TeaCC", "TeaDD");
+        List<String> Beanchers2 = Arrays.asList("BeanAA", "BeanBB", "BeanCC", "BeanDD");
 
         List<List<String>> peterSchool = new ArrayList<>();
         peterSchool.add(students2);
-        peterSchool.add(teachers2);
+        peterSchool.add(Beanchers2);
         System.out.println(peterSchool);
 
 //      Map<String , List<List<String>>> schoolMap = new HashMap<>();
         Map<String , List<List<String>>> schoolMap = new Hashtable<>();
-        schoolMap.put("PeterSchool", peterSchool);
+        schoolMap.put("PeterSchools", peterSchool);
         schoolMap.put("MappleSchool", mappleSchool);
 
         System.out.println(schoolMap);
 
-        List<List<String>> peterSchool1 = schoolMap.get("PeterSchool");
-        peterSchool1.get(0).get(2);
+        List<List<String>> peterSchool1 = schoolMap.get("PeterSchools");
+        System.out.println(peterSchool1);
         // how to iterate a map...
 
     }
