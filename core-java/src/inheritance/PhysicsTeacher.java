@@ -2,7 +2,7 @@ package inheritance;
 /*
     The behaviour is been derived by the state.
  */
-public class PhysicsTeacher extends Teacher {
+public class PhysicsTeacher extends Teacher{
     private int yearsOfLabExperience;
     private int yearOfIndustrialExperience;
 
