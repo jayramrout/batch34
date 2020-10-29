@@ -2,6 +2,9 @@ package inheritance;
 
 import inheritance.sports.SportsTeacher;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class InheritanceDriver {
     public static void main(String[] args) {
 //        Teacher steacher = new SportsTeacher(104,"MIT","Soccer",23);
@@ -41,6 +44,10 @@ public class InheritanceDriver {
             SportsTeacher st =(SportsTeacher)teacher;
             st.joggingTime();
         }
+
+        List<String> names = Arrays.asList("1","2");
+        // Consumer
+        // Predicate
     }
 
 
