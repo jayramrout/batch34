@@ -6,7 +6,11 @@ public class Box {
     double depth;
 
     String name;
-    public Box(){}
+    static int counter = 0;
+    public Box(){
+        System.out.println("Invoking box empty constructor");
+        counter++;
+    }
 
     public Box(String name){
         this.name = name;
@@ -42,5 +46,18 @@ public class Box {
 
     public void setDepth(double depth) {
         this.depth = depth;
+    }
+
+    public static void main(String[] args) {
+        try {
+            Class.forName("jrout.tutorial.core.classesExample.Box").newInstance();
+            System.out.println(Box.counter);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
     }
 }
