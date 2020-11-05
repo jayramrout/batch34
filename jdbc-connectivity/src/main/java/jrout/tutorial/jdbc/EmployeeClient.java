@@ -1,12 +1,12 @@
 package jrout.tutorial.jdbc;
 
 import jrout.tutorial.jdbc.domain.Employee;
-import jrout.tutorial.jdbc.service.IEmployee;
-import jrout.tutorial.jdbc.service.impl.EmployeeImpl;
+import jrout.tutorial.jdbc.service.IEmployeeService;
+import jrout.tutorial.jdbc.service.impl.EmployeeServiceServiceImpl;
 
 public class EmployeeClient {
     public static void main(String[] args) {
-        IEmployee employee = new EmployeeImpl();
+        IEmployeeService employee = new EmployeeServiceServiceImpl();
 
         Employee employees = employee.getEmployees(10001);
 

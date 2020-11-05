@@ -4,7 +4,7 @@ import jrout.tutorial.jdbc.domain.Employee;
 
 import java.util.List;
 
-public interface IEmployee {
+public interface IEmployeeService {
     public List<Employee> getEmployees(String firstName, String gender);
     public Employee getEmployees(int empId);
 
