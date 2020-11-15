@@ -32,7 +32,7 @@ public class EmployeeControllerServlet extends HttpServlet {
         if(empId != null && empId.trim().length() > 0) {
             employeeInfo = employeeService.getEmployee(Integer.parseInt(empId));
             req.setAttribute("employee",employeeInfo);
-            RequestDispatcher employeeListView = req.getRequestDispatcher("employeeView");
+            RequestDispatcher employeeListView = req.getRequestDispatcher("employeeView.jsp");
             employeeListView.include(req,resp);
         }else if(fname != null && fname.trim().length() > 0) {
             employeeList = employeeService.getEmployeeList(fname);
