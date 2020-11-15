@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>jrout.tutorial</groupId>
-	<artifactId>spring-boot-servlet-jsp</artifactId>
+	<artifactId>spring-boot-servlet-jsp-plain</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>spring-boot-servlet-jsp</name>
+	<name>spring-boot-servlet-jsp-plain</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
