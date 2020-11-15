@@ -1,4 +1,5 @@
 <%@ page import="jrout.tutorial.springbootservletjsp.model.Employee" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,12 +30,14 @@
 <table>
     <tr>
         <th>EmpId</th>
+        <th>EmpId</th>
         <th>FirstName</th>
         <th>Last Name</th>
         <th>Salary</th>
         <th>Address</th>
     </tr>
     <tr>
+        <td>${employee.empId}</td>
         <td><%=employee.getEmpId()%></td>
         <td><%=employee.getFname()%></td>
         <td><%=employee.getLname()%></td>
