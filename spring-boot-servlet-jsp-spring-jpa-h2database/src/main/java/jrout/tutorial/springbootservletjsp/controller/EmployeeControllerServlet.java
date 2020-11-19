@@ -21,14 +21,18 @@ public class EmployeeControllerServlet extends HttpServlet {
     @Autowired
     private IEmployeeService employeeService;
 
+    // We are tightly coupling these dependencies..
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("Entered my controll");
+
         String fname = req.getParameter("fname");
         String empId = req.getParameter("empId");
         List<Employee> employeeList = null;
 
         Employee employeeInfo = null;
         if(empId != null && empId.trim().length() > 0) {
+            System.out.println("empid ="+ empId);
             employeeInfo = employeeService.getEmployee(Integer.parseInt(empId));
             req.setAttribute("employee",employeeInfo);
             RequestDispatcher employeeView = req.getRequestDispatcher("/employeeView.jsp");
@@ -40,6 +44,7 @@ public class EmployeeControllerServlet extends HttpServlet {
             RequestDispatcher employeeListView = req.getRequestDispatcher("employeeListView");
             employeeListView.forward(req,resp);
         }
+        System.out.println("exit my controll");
     }
 
     @Override
