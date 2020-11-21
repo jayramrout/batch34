@@ -17,7 +17,6 @@ public class EmployeeServiceImpl implements IEmployeeService{
     public Employee getEmployee(int empId) {
         System.out.println("Entered geEmployee withId "+ empId);
         Employee employee = employeeRepository.findById(empId).get();
-
         if(empId == 100){
             employee.setSalary(200f);
         }

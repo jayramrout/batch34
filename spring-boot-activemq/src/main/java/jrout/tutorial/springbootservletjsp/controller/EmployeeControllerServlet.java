@@ -3,7 +3,6 @@ package jrout.tutorial.springbootservletjsp.controller;
 import jrout.tutorial.springbootservletjsp.model.Employee;
 import jrout.tutorial.springbootservletjsp.service.EmployeeServiceImpl;
 import jrout.tutorial.springbootservletjsp.service.IEmployeeService;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.RequestDispatcher;
@@ -19,19 +18,13 @@ import java.util.List;
 @WebServlet(name = "Servlet" , urlPatterns = {"/employeeController"})
 public class EmployeeControllerServlet extends HttpServlet {
 
-    private final static Logger LOGGER = Logger.getLogger(EmployeeControllerServlet.class);
-
     @Autowired
     private IEmployeeService employeeService;
 
     // We are tightly coupling these dependencies..
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        LOGGER.info("Entered my controll");
-        LOGGER.debug("This is debug level log....");
-        LOGGER.error("This is error level message..");
-
-        System.out.println("This goes to the console...");
+        System.out.println("Entered my controll");
 
         String fname = req.getParameter("fname");
         String empId = req.getParameter("empId");
@@ -51,7 +44,7 @@ public class EmployeeControllerServlet extends HttpServlet {
             RequestDispatcher employeeListView = req.getRequestDispatcher("employeeListView");
             employeeListView.forward(req,resp);
         }
-        LOGGER.info("exit my controll");
+        System.out.println("exit my controll");
     }
 
     @Override

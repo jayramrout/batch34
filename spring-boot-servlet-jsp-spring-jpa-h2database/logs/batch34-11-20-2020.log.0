@@ -1,0 +1,8 @@
+[2020-11-20 21:02:31,204] INFO  - http-nio-8080-exec-3 - jrout.tutorial.springbootservletjsp.controller.EmployeeControllerServlet doPost - Entered my controll
+[2020-11-20 21:02:31,211] DEBUG - http-nio-8080-exec-3 - jrout.tutorial.springbootservletjsp.controller.EmployeeControllerServlet doPost - This is debug level log....
+[2020-11-20 21:02:31,211] ERROR - http-nio-8080-exec-3 - jrout.tutorial.springbootservletjsp.controller.EmployeeControllerServlet doPost - This is error level message..
+[2020-11-20 21:02:34,759] INFO  - http-nio-8080-exec-3 - jrout.tutorial.springbootservletjsp.controller.EmployeeControllerServlet doPost - exit my controll
+[2020-11-20 21:02:58,676] INFO  - http-nio-8080-exec-6 - jrout.tutorial.springbootservletjsp.controller.EmployeeControllerServlet doPost - Entered my controll
+[2020-11-20 21:02:58,680] DEBUG - http-nio-8080-exec-6 - jrout.tutorial.springbootservletjsp.controller.EmployeeControllerServlet doPost - This is debug level log....
+[2020-11-20 21:02:58,681] ERROR - http-nio-8080-exec-6 - jrout.tutorial.springbootservletjsp.controller.EmployeeControllerServlet doPost - This is error level message..
+[2020-11-20 21:02:58,712] INFO  - http-nio-8080-exec-6 - jrout.tutorial.springbootservletjsp.controller.EmployeeControllerServlet doPost - exit my controll
