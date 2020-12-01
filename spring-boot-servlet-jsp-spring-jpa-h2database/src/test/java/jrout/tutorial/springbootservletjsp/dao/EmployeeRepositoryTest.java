@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,6 +28,25 @@ class EmployeeRepositoryTest {
 
         assertNotNull(employees);
         assertTrue(employees.size() == 2);
+
+    }
+
+    @Test
+    void saveEmployee() {
+        assertNotNull(employeeRepository);
+        employeeRepository.save(new Employee(12,"Peter","Pan"));
+        employeeRepository.save(new Employee(13,"Rod","Mleen"));
+        long count = employeeRepository.count();
+        assertTrue(count == 2);
+
+        Employee employee = employeeRepository.findById(12).get();
+        assertNotNull(employee);
+        System.out.println("employee.getFirstName() = " + employee.getFirstName());
+        employee.setFirstName("Rogan");
+        employeeRepository.save(employee);
+
+        employee = employeeRepository.findById(12).get();
+        System.out.println("employee.getFirstName() = " + employee.getFirstName());
 
     }
 

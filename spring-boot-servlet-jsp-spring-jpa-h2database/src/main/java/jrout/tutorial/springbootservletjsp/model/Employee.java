@@ -1,12 +1,15 @@
 package jrout.tutorial.springbootservletjsp.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity(name = "employees")
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GenericGenerator(name = "assigned_id", strategy = "org.hibernate.id.Assigned")
+    @GeneratedValue(generator = "assigned_id")
     private int id;
 
     @Column(name = "first_name")

@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+// http://localhost:8080/employeeController?id=100
+// http://localhost:8080/restemp?id=100
 @RestController
 public class EmployeeRestController {
 
