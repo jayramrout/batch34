@@ -1,24 +1,23 @@
 package jrout.tutorial.springbootservletjsp.service;
 
-import jrout.tutorial.springbootservletjsp.dao.IEmployeeDAO;
-import jrout.tutorial.springbootservletjsp.dao.impl.EmployeeDAOImpl;
+import jrout.tutorial.springbootservletjsp.dao.EmployeeRepository;
 import jrout.tutorial.springbootservletjsp.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-//@Component
 public class EmployeeServiceImpl implements IEmployeeService{
 
     @Autowired
-    private IEmployeeDAO employeeDAO;
+    private EmployeeRepository employeeRepository;
 
     @Override
     public Employee getEmployee(int empId) {
-        Employee employee = employeeDAO.getEmployee(empId);
+        System.out.println("Entered geEmployee withId "+ empId);
+        Employee employee = employeeRepository.findById(empId).get();
+
         if(empId == 100){
             employee.setSalary(200f);
         }
@@ -27,7 +26,7 @@ public class EmployeeServiceImpl implements IEmployeeService{
 
     @Override
     public List<Employee> getEmployeeList(String fname) {
-        List<Employee> employeeList = employeeDAO.getEmployeeList(fname);
-        return employeeList;
+        List<Employee> allByFirstName = employeeRepository.findByFirstName(fname);
+        return allByFirstName;
     }
 }
