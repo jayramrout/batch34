@@ -1,21 +1,24 @@
-package jrout.tutorial.springbootservletjsp.model;
-
-import org.hibernate.annotations.GenericGenerator;
+package jrout.tutorial.springbootjpa.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
-@Entity(name = "employees")
+@Entity
+@Table(name = "employees")
+// JPQL : Java Persistence Query Language.
+@NamedQuery(name="find_all_employee", query = "select e from Employee e")
 public class Employee {
-
     @Id
-    @GenericGenerator(name = "assigned_id", strategy = "org.hibernate.id.Assigned")
-    @GeneratedValue(generator = "assigned_id")
+//    @org.hibernate.annotations.GenericGenerator(name = "assigned_id", strategy = "org.hibernate.id.Assigned")
+//    @GeneratedValue(generator = "assigned_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "last_name") private String lastName;
+    @Column(name = "last_name")
+    private String lastName;
 
     private String address;
     private float salary;
@@ -30,18 +33,19 @@ public class Employee {
 
     public Employee(){}
 
-    public Employee(int id, String firstName){
-        this.id = id;
+    public Employee(String firstName){
         this.firstName = firstName;
-    }
-    public Employee(int id, String firstName, String lastName){
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
     }
     public Employee(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public Employee(String firstName, String lastName, String address, float salary){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.salary = salary;
     }
     public String getFirstName() {
         return firstName;
@@ -73,5 +77,16 @@ public class Employee {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "\nEmployee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }

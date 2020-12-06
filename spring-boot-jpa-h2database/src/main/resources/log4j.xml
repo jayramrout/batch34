@@ -17,10 +17,6 @@
         </layout>
     </appender>
 
-    <logger name="jrout.tutorial.springbootservletjsp.controller">
-        <level value="DEBUG"/>
-    </logger>
-
     <root>
         <priority value ="DEBUG" />
         <appender-ref ref="Console"/>
