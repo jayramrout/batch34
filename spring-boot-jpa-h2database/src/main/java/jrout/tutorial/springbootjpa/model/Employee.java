@@ -1,12 +1,24 @@
 package jrout.tutorial.springbootjpa.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-@Table(name = "employees")
+@Table(name = "employee")
 // JPQL : Java Persistence Query Language.
-@NamedQuery(name="find_all_employee", query = "select e from Employee e")
+@NamedQuery(name="Employee.findAllEmpoyee", query = "select e from Employee e")
+@NamedNativeQuery(name = "Employee.findByFirstNameAndLastName", query = "SELECT * FROM EMPLOYEE WHERE first_name = ? AND last_name = ?", resultClass = Employee.class)
+
+@Data
+//@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Employee {
     @Id
 //    @org.hibernate.annotations.GenericGenerator(name = "assigned_id", strategy = "org.hibernate.id.Assigned")
@@ -21,72 +33,31 @@ public class Employee {
     private String lastName;
 
     private String address;
-    private float salary;
 
-    public float getSalary() {
-        return salary;
-    }
+    @OneToOne(fetch = FetchType.LAZY)
+    private Passport passport;
 
-    public void setSalary(float salary) {
-        this.salary = salary;
-    }
+    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY)
+    private List<Salary> salaries;
 
-    public Employee(){}
-
-    public Employee(String firstName){
-        this.firstName = firstName;
-    }
     public Employee(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
-    }
+     }
 
-    public Employee(String firstName, String lastName, String address, float salary){
+    public Employee(String firstName, String lastName, String address){
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
-        this.salary = salary;
-    }
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
         this.address = address;
     }
 
     @Override
     public String toString() {
-        return "\nEmployee{" +
+        return "Employee{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
-                ", salary=" + salary +
                 '}';
     }
 }
