@@ -1,11 +1,9 @@
 package jrout.tutorial.springbootjpa.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -38,7 +36,15 @@ public class Employee {
     private Passport passport;
 
     @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY)
-    private List<Salary> salaries;
+    private List<Salary> salaries = new ArrayList<>();
+
+    @ManyToMany // manyTomany are by default Lazy fetch
+    @JoinTable(name = "EMPLOYEE_X_CERTIFICATE",
+    joinColumns = @JoinColumn(name = "EMPLOYEE_ID"),
+    inverseJoinColumns = @JoinColumn(name = "CERTIFICATE_ID"))
+    // inverseJoinColumn is the inverse side of the relationship.
+    @Setter(AccessLevel.NONE) //lombok
+    private List<Certificate> certificates = new ArrayList<>();
 
     public Employee(String firstName, String lastName){
         this.firstName = firstName;
@@ -49,6 +55,10 @@ public class Employee {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
+    }
+
+    public void addCertificate(Certificate certificate){
+        this.certificates.add(certificate);
     }
 
     @Override

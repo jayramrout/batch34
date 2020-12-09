@@ -21,3 +21,13 @@ INSERT INTO certificate (id,name) VALUES
   (803,'Microsoft Certification'),
   (804,'SAP Certification')
   ;
+
+INSERT INTO EMPLOYEE_X_CERTIFICATE(employee_id,certificate_id) VALUES
+    (101,801),
+    (101,802),
+    (101,803),
+    (102,803),
+    (103,802),
+    (103,803),
+    (103,804)
+    ;

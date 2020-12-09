@@ -1,6 +1,7 @@
 package jrout.tutorial.springbootjpa.dao;
 
 import jrout.tutorial.springbootjpa.SpringBootJPAApplication;
+import jrout.tutorial.springbootjpa.model.Certificate;
 import jrout.tutorial.springbootjpa.model.Employee;
 import jrout.tutorial.springbootjpa.model.Passport;
 import jrout.tutorial.springbootjpa.model.Salary;
@@ -159,4 +160,29 @@ class EmployeeRepositoryTest {
     }
 
 
+    @Test
+    @Transactional
+    public void fetchEmployeeTest(){
+        Employee employee = employeeRepository.findById(102);
+        assertNotNull(employee);
+        logger.info("Employee \n {}",employee);
+        logger.info("All Certificates \n {}",employee.getCertificates());
+    }
+
+
+    @Test
+    @Transactional
+    public void insertEmployeeAndCertificate(){
+        Certificate certificate = entityManager.find(Certificate.class, 801);
+        Employee employee = entityManager.find(Employee.class, 102);
+        employee.addCertificate(certificate);
+
+        entityManager.persist(employee);
+
+        logger.info("Employee {}" , employee);
+        entityManager.flush(); // commit it explicitly.// you don't need it actually
+
+        employee = entityManager.find(Employee.class, 102);
+        logger.info("Certifcates {}" , employee.getCertificates());
+    }
 }

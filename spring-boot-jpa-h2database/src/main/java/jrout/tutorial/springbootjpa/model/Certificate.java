@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "certificate")
@@ -20,6 +22,10 @@ public class Certificate {
 
     @Column
     private String name;
+
+    // manyTomany are by default Lazy fetch
+    @ManyToMany(mappedBy = "certificates")
+    private List<Employee> employees = new ArrayList<>();
 
     @Override
     public String toString() {

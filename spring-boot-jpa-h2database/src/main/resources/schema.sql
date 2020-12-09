@@ -26,3 +26,9 @@ CREATE TABLE certificate (
     name VARCHAR2(100) NOT NULL
 
 );
+
+CREATE TABLE EMPLOYEE_X_CERTIFICATE(
+    employee_id INT NOT NULL,
+    certificate_id INT NOT NULL,
+    PRIMARY KEY (employee_id, certificate_id)
+)
