@@ -185,4 +185,20 @@ class EmployeeRepositoryTest {
         employee = entityManager.find(Employee.class, 102);
         logger.info("Certifcates {}" , employee.getCertificates());
     }
+
+
+
+    @Test
+    @Transactional
+    public void fetchCertificateCache(){
+        Certificate certificate = entityManager.find(Certificate.class, 801);
+        logger.info("Certificate name {}", certificate.getName());
+
+        certificate = entityManager.find(Certificate.class, 801);
+        logger.info("Certificate name {}", certificate.getName());
+    }
+
+
+
+
 }

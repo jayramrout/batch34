@@ -15,6 +15,11 @@ import java.util.List;
 //@ToString
 @AllArgsConstructor
 @NoArgsConstructor
+
+
+//@Cacheable
+// Uncomment this to enable second level cache. And also add cache properties
+
 public class Certificate {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
